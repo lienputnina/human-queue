@@ -61,7 +61,17 @@ template <class Type> Type Queue<Type>::dequeue() {
     return Type();
   } else {
 
-    // Storing the element to remove to prevent memory leaks?
+    /*
+    Returning Type() to provide a default value of 'Type'. This way the method
+    will always return a value of the correct type.
+    */
+    return Type();
+  }
+  else {
+    /*
+    Storing the element to be removed to let the program now, which element is
+    being removed.
+    */
     Type removedElement = queueArray[0];
 
     /*
@@ -94,3 +104,11 @@ template <class Type> void Queue<Type>::PrintQueue() {
   };
   cout << "\n";
 };
+
+/*
+Explicitly instantiating the template class to avoid compilation problems in
+'main'.
+*/
+template class Queue<int>;
+template class Queue<float>;
+template class Queue<char>;
