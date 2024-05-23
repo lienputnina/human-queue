@@ -60,6 +60,10 @@ template <class Type> Type Queue<Type>::dequeue() {
     */
     return Type();
   } else {
+
+    // Storing the element to remove to prevent memory leaks?
+    Type removedElement = queueArray[0];
+
     /*
     Storing the element to be removed to let the program now, which element is
     being removed.
