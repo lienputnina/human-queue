@@ -12,6 +12,7 @@ private:
   int age;
 
 public:
+  Human();
   Human(string name, string lastName, int age);
 
   string GetName();

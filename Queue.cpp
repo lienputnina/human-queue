@@ -36,6 +36,7 @@ template <class Type> void Queue<Type>::enqueue(Type x) {
   // Checking, if the array is full to see whether a new element can be added
   if (isArrayFull()) {
     cout << "Queue is full. Cannot add any more elements." << endl;
+    cout << "\n";
   } else {
     /*
     Adding a new element at the curent position of arrayIndex.
@@ -79,15 +80,7 @@ template <class Type> Type Queue<Type>::dequeue() {
 
 template <class Type> void Queue<Type>::PrintQueue() {
   for (int i = 0; i < arraySize; i++) {
-    cout << queueArray[i] << " ";
+    queueArray[i].PrintHuman();
   };
   cout << "\n";
 };
-
-/*
-Explicitly instantiating the template class to avoid compilation problems in
-'main'.
-*/
-template class Queue<int>;
-template class Queue<float>;
-template class Queue<char>;

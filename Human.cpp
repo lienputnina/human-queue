@@ -2,6 +2,12 @@
 #include <iostream>
 #include <string>
 
+Human::Human() {
+  name = "Jānis";
+  lastName = "Bērziņš";
+  age = 31;
+};
+
 Human::Human(string humanName, string humanLastName, int humanAge) {
   name = humanName.empty() ? "Jānis" : humanName;
   lastName = humanLastName.empty() ? "Bērziņš" : humanLastName;
@@ -17,6 +23,5 @@ void Human::PrintHuman() {
   cout << "Name: " << GetName() << endl;
   cout << "Last name: " << GetLastName() << endl;
   cout << "Age: " << GetAge() << endl;
-  cout << "\n";
   cout << "\n";
 }
