@@ -13,9 +13,9 @@ private:
 
 public:
   /*
-  Default constructor to provide default-constructed Human object. This is
-  needed for the 'dequeue''method of the Queue class which will try to return a
-  default object of a specific type.
+   Default constructor to create a default-constructed Human object.
+   Needed for the 'dequeue' method of the Queue class which returns
+   a default object of a specific type when the queue is empty.
   */
   Human();
   Human(string name, string lastName, int age);
