@@ -33,7 +33,7 @@ template <class Type> bool Queue<Type>::isArrayFull() const {
 }
 
 template <class Type> void Queue<Type>::enqueue(Type x) {
-  // Checking, if the array is full to see whether a new element can be added
+  // Checking, if the array is full to see whether a new element can be added.
   if (isArrayFull()) {
     cout << "Queue is full. Cannot add any more elements." << endl;
     cout << "\n";
@@ -66,7 +66,7 @@ template <class Type> Type Queue<Type>::dequeue() {
 
     /*
     Shifting array elements to the left to "delete" the first element and fill
-    the gap
+    the gap.
     */
     for (int i = 0; i < arraySize - 1; i++) {
       queueArray[i] = queueArray[i + 1];
@@ -80,6 +80,10 @@ template <class Type> Type Queue<Type>::dequeue() {
 
 template <class Type> void Queue<Type>::PrintQueue() {
   for (int i = 0; i < arraySize; i++) {
+    /*
+      Directly printing objects of the Human class. Modified loop body from
+      'Uzdevums1'·
+    */
     queueArray[i].PrintHuman();
   };
   cout << "\n";

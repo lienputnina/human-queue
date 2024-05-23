@@ -12,6 +12,11 @@ private:
   int age;
 
 public:
+  /*
+  Default constructor to provide default-constructed Human object. This is
+  needed for the 'dequeue''method of the Queue class which will try to return a
+  default object of a specific type.
+  */
   Human();
   Human(string name, string lastName, int age);
 

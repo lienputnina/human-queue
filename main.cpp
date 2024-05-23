@@ -16,6 +16,9 @@ int main() {
   Human President5("Valdis", "Zatlers", 69);
   Human President6("Vaira", "Vīķe-Freiberga", 86);
 
+  cout << "Trying to delete the first element of the HumanQueue:" << endl;
+  HumanQueue.dequeue();
+
   cout << "Filling HumanQueue with presidents:" << endl;
   HumanQueue.enqueue(President1);
   HumanQueue.enqueue(President2);

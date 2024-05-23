@@ -1,7 +1,7 @@
 #ifndef Queue_h
 #define Queue_h
 
-// Declaring the class as a template class
+// Declaring the class as a template class.
 template <class Type> class Queue {
 
 private:
@@ -30,7 +30,7 @@ public:
   Type dequeue();
 
   void PrintQueue();
-  bool isArrayFull() const; // Method for checking, if the array is full
+  bool isArrayFull() const; // Method for checking, if the array is full.
 };
 
 #endif

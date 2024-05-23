@@ -2,6 +2,9 @@
 #include <iostream>
 #include <string>
 
+/*
+ Implementation of the default constructor.
+ */
 Human::Human() {
   name = "Jānis";
   lastName = "Bērziņš";
