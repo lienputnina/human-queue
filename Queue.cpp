@@ -4,7 +4,7 @@ using namespace std;
 
 template <class Type> Queue<Type>::Queue(int queueArraySize) {
 
-  arraySize = queueArraySize;
+  queueSize = queueArraySize;
   elementCount = 0;
 
   arraySize = queueArraySize;
@@ -15,23 +15,19 @@ template <class Type> Queue<Type>::Queue(int queueArraySize) {
   */
   queueArray = new Type[queueArraySize];
 
-  // Adding a check to see, if the memory is full.
+  // Checking, if the memory allocation was successful.
   if (queueArray == nullptr) {
     cout << "Not enough memory. Program is shutting down." << endl;
-    exit(1); // Exiting the program if memory allocation fails
+    exit(1); // Exiting the program, if memory allocation fails.
   };
 };
 
-template <class Type> Queue<Type>::~Queue() {
-  /*
- Deallocating the previously reserved memory for the queueArray
- to prevent a memory leak.
-*/
-  delete[] queueArray;
-};
+// Destructor to deallocate memory and prevent memory leaks.
+template <class Type> Queue<Type>::~Queue() { delete[] queueArray; };
 
-template <class Type> bool Queue<Type>::isArrayFull() const {
-  return elementCount >= arraySize;
+// Checking, if the queue is full.
+template <class Type> bool Queue<Type>::isQueueFull() const {
+  return elementCount >= queueSize;
 }
 
 template <class Type> void Queue<Type>::enqueue(Type x) {
@@ -41,9 +37,8 @@ template <class Type> void Queue<Type>::enqueue(Type x) {
     cout << "\n";
   } else {
     /*
-    Adding a new element at the curent position of arrayIndex.
-    If arrayIndex = 0, the element is added to position 0 (first), if arrayIndex
-    = 1, the element is added to second position, etc.
+    Adding a new element at the curent position of elementCount. If the position
+    is 0, the element will be the first, if 1 - second, etc.
     */
     queueArray[elementCount++] = x;
   };
@@ -54,10 +49,7 @@ template <class Type> Type Queue<Type>::dequeue() {
     cout << "Queue is empty. Nothing to remove." << endl;
     cout << "\n";
 
-    /*
-    Returning Type() to provide a default value of 'Type'. This way the method
-    will always return a value of the correct type.
-    */
+    // Returning the default value of Type, if the queue is empty.
     return Type();
   } else {
 
@@ -84,7 +76,7 @@ template <class Type> Type Queue<Type>::dequeue() {
     Shifting array elements to the left to "delete" the first element and fill
     the gap.
     */
-    for (int i = 0; i < arraySize - 1; i++) {
+    for (int i = 0; i < queueSize - 1; i++) {
       queueArray[i] = queueArray[i + 1];
     };
 
@@ -106,8 +98,7 @@ template <class Type> void Queue<Type>::PrintQueue() {
 };
 
 /*
-Explicitly instantiating the template class to avoid compilation problems in
-'main'.
+Explicitly instantiating the template class to avoid compilation errors.
 */
 template class Queue<int>;
 template class Queue<float>;
