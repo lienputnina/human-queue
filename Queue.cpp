@@ -7,12 +7,7 @@ template <class Type> Queue<Type>::Queue(int queueArraySize) {
   queueSize = queueArraySize;
   elementCount = 0;
 
-  arraySize = queueArraySize;
-  elementCount = 0;
-  /*
-  Allocating memory for Queue class object. This object will be an array with
-  the size the user will provide.
-  */
+  // Allocating memory for the queue array.
   queueArray = new Type[queueArraySize];
 
   // Checking, if the memory allocation was successful.
@@ -31,10 +26,8 @@ template <class Type> bool Queue<Type>::isQueueFull() const {
 }
 
 template <class Type> void Queue<Type>::enqueue(Type x) {
-  // Checking, if the array is full to see whether a new element can be added.
-  if (isArrayFull()) {
+  if (isQueueFull()) {
     cout << "Queue is full. Cannot add any more elements." << endl;
-    cout << "\n";
   } else {
     /*
     Adding a new element at the curent position of elementCount. If the position
@@ -52,29 +45,11 @@ template <class Type> Type Queue<Type>::dequeue() {
     // Returning the default value of Type, if the queue is empty.
     return Type();
   } else {
-
-    /*
-    Returning Type() to provide a default value of 'Type'. This way the method
-    will always return a value of the correct type.
-    */
-    return Type();
-  }
-  else {
-    /*
-    Storing the element to be removed to let the program now, which element is
-    being removed.
-    */
     Type removedElement = queueArray[0];
 
     /*
-    Storing the element to be removed to let the program now, which element is
-    being removed.
-    */
-    Type removedElement = queueArray[0];
-
-    /*
-    Shifting array elements to the left to "delete" the first element and fill
-    the gap.
+    Shifting array elements to the left to fill the gap from deleting the first
+    element.
     */
     for (int i = 0; i < queueSize - 1; i++) {
       queueArray[i] = queueArray[i + 1];
@@ -87,12 +62,8 @@ template <class Type> Type Queue<Type>::dequeue() {
 };
 
 template <class Type> void Queue<Type>::PrintQueue() {
-  for (int i = 0; i < arraySize; i++) {
-    /*
-      Directly printing objects of the Human class. Modified loop body from
-      'Uzdevums1'·
-    */
-    queueArray[i].PrintHuman();
+  for (int i = 0; i < queueSize; i++) {
+    cout << queueArray[i] << " ";
   };
   cout << "\n";
 };
