@@ -12,8 +12,8 @@ Human::Human() {
 };
 
 Human::Human(string humanName, string humanLastName, int humanAge) {
-  name = humanName.empty() ? "Jānis" : humanName;
-  lastName = humanLastName.empty() ? "Bērziņš" : humanLastName;
+  name = humanName.empty() ? "Janis" : humanName;
+  lastName = humanLastName.empty() ? "Berzins" : humanLastName;
   age = humanAge > 0 ? humanAge : 31;
 };
 
