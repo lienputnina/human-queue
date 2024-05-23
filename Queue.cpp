@@ -7,6 +7,8 @@ template <class Type> Queue<Type>::Queue(int queueArraySize) {
   arraySize = queueArraySize;
   elementCount = 0;
 
+  arraySize = queueArraySize;
+  elementCount = 0;
   /*
   Allocating memory for Queue class object. This object will be an array with
   the size the user will provide.

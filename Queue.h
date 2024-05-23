@@ -29,8 +29,6 @@ public:
   */
   Type dequeue();
 
-  bool isArrayFull() const;
-
   void PrintQueue();
   bool isArrayFull() const; // Method for checking, if the array is full.
 };
