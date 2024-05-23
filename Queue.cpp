@@ -63,14 +63,7 @@ template <class Type> Type Queue<Type>::dequeue() {
 
 template <class Type> void Queue<Type>::PrintQueue() {
   for (int i = 0; i < queueSize; i++) {
-    cout << queueArray[i] << " ";
+    queueArray[i].PrintHuman();
   };
   cout << "\n";
 };
-
-/*
-Explicitly instantiating the template class to avoid compilation errors.
-*/
-template class Queue<int>;
-template class Queue<float>;
-template class Queue<char>;
