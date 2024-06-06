@@ -20,6 +20,12 @@ public:
   Human();
   Human(string name, string lastName, int age);
 
+  // Copy constructor to prevent shallow copies
+  Human(const Human &other);
+
+  // Assignment operator overload to prevent shallow copies
+  Human &operator=(const Human &other);
+
   string GetName();
   string GetLastName();
   int GetAge();
